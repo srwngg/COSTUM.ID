@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bingkai Melengkung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        margin: 0;
+        background-color: black;
+        font-family: sans-serif;
+        color: white;
+      }
+
+      .frame {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding: 80px 40px;
+        box-sizing: border-box;
+        z-index: 1;
+      }
+
+      .frame::before,
+      .frame::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .inner-border {
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 5px;
+        right: 5px;
+        border: 2px dashed #ffffff;
+        border-radius: 40px;
+        pointer-events: none;
+      }
+
+      .content {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        z-index: 2;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="inner-border"></div>
+      <div class="content">
+        <div class="-mt-10 mb-10 flex justify-center">
+          <img src="image.png" alt="Main Logo" class="w-40 max-w-xs h-auto" />
+        </div>
+
+        <div class="space-y-4">
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            class="flex items-center justify-center gap-3 border-2 border-white py-4 text-center hover:bg-green-600 hover:text-white transition duration-300 rounded-full"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              alt="WhatsApp Logo"
+              class="h-6 w-6"
+            />
+            <span>WHATSAPP</span>
+          </a>
+
+          <a
+            href="https://shopee.co.id/yourstore"
+            target="_blank"
+            class="flex items-center justify-center gap-3 border-2 border-white py-4 text-center hover:bg-orange-500 hover:text-white transition duration-300 rounded-full"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopee_logo.svg"
+              alt="Shopee Logo"
+              class="h-6 w-6"
+            />
+            <span>SHOPEE</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
